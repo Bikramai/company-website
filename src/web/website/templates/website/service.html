@@ -1,0 +1,43 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block content %}
+<div id="smooth-wrapper">
+    <div id="smooth-content">
+
+
+        <!-- ./ page-header -->
+
+        <section class="service-section pt-130 pb-130 mt-130">
+            <div class="container">
+                <div class="row gy-5">
+                    <div class="row gy-4 fade-wrapper">
+                        {% for service in services %}
+
+                        <div class="col-md-6">
+                            <img style="width: 665px; height: 300px;" src="{{ service.image.url }}" alt="service">
+                            <div class="service-card fade-top">
+                                <div class="shape">
+                                    <img src="/static/assets/img/shapes/service-shape-2.png" alt="service">
+                                </div>
+                                <div class="icon"><img src="/static/assets/img/icon/service-1.png" alt="service">
+                                </div>
+                                <div class="content">
+                                    <h3 class="title">{{  service.name }}</h3>
+                                    <p>{{ service.description|truncatechars:100 }}</p>
+                                    <a href="{% url 'service:service-details' service.id %}" class="read-more">Read More<i
+                                            class="fa-regular fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ./ service-cta -->
+
+
+    </div>
+</div>
+{% endblock content %}

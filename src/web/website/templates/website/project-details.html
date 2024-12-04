@@ -1,0 +1,99 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+
+
+        <section class="project-details pt-130 pb-130 mt-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="project-details-content">
+                            <div class="project-details-img">
+                                <img src={{project.image.url}} alt="project">
+                            </div>
+                            <div class="project-details-items">
+
+                                <div class="project-details-item">
+                                    <div class="icon"><i class="fa-solid fa-layer-group"></i></div>
+                                    <div class="content">
+                                        <span>Category:</span>
+                                        <h4 class="item-title">{{project.category}}</h4>
+                                    </div>
+                                </div>
+                                <div class="project-details-item">
+                                    <div class="icon"><i class="fa-solid fa-calendar-days"></i></div>
+                                    <div class="content">
+                                        <span>Date:</span>
+                                       <h4 class="item-title">{{ project.created_at|date:"Y-m-d" }}</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <h3 class="details-title mb-30">{{ project.title }}</h3>
+                            <p class="mb-30">{{ project.description}}</p>
+                            <div class="row project-details-wrap">
+                                <div class="col-lg-8 col-md-12">
+                                    <div class="project-details-left">
+                                        <div class="details-item">
+                                            <h3 class="details-title">01. The Challenge</h3>
+                                            <p>{{project.challenge}}</p>
+                                        </div>
+                                        <div class="details-item">
+                                            <h3 class="details-title">02. The Solution</h3>
+                                            <p class="desc mb-30">{{project.solution}}</span></p>
+
+                                        </div>
+                                        <div class="details-item">
+                                            <blockquote>
+                                                <div class="icon"><i class="fa-light fa-quote-right"></i></div>
+                                                <div class="content">
+                                                    <p>“{{project.qoute}}”</p>
+                                                    <h4 class="author">{{project.name}}</h4>
+                                                </div>
+                                            </blockquote>
+                                        </div>
+                                        <div class="details-item">
+                                            <h3 class="details-title">03. The Result</h3>
+                                            <p class="desc mb-30">{{project.result}}</span></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-12">
+                                    <div class="project-details-thumb">
+                                        <div class="details-thumb">
+                                            <img src="{{project.image1.url}}" alt="project">
+                                        </div>
+                                        <div class="details-thumb">
+                                            <img src="{{project.image2.url}}" alt="project">
+                                        </div>
+                                        <div class="details-thumb">
+                                            <img src="{{project.image3.url}}" alt="project">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ./ project-details -->
+
+
+        <!-- ./ case-study -->
+
+
+
+
+        </div>
+    </div>
+
+{% endblock content %}

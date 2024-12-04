@@ -1,0 +1,36 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row author-wrap align-items-center mt-130">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="author-img">
+                            <img src="{{ team_member.profile_image.url }}" alt="author">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="author-content">
+                            <h2 class="name">{{ team_member.name }} <span>{{ team_member.role }}</span></h2>
+                            <p>{{ team_member.bio }}</p>
+                            <div class="author-items">
+                                <div class="author-item">
+                                    <div class="icon"><i class="fa-solid fa-user"></i></div>
+                                    <div class="content">
+                                        <h4><span>Email</span>{{ team_member.email }}</h4>
+                                    </div>
+                                </div>
+                                <div class="author-item">
+                                    <div class="icon"><i class="fa-sharp fa-solid fa-envelope"></i></div>
+                                    <div class="content">
+                                        <h4><span>Role</span><a href="mailto:info@agency.com">{{ team_member.role }}</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="{% url 'website:contact'  %}" class="rr-primary-btn">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+{% endblock %}
+
+
+
